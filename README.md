@@ -1,1 +1,1 @@
-# mySQL-samples
+# Learn mySQL
