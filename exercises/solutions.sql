@@ -66,7 +66,7 @@ VALUES  ('song 1', 123, 1),
 SELECT AVG(songs.length) AS 'Average Song Duration'
 FROM songs;
 
-/* 10 */
+/* 11 */
 SELECT
   albums.name AS 'Album',
   albums.releaseYear AS 'Release Year',
@@ -74,3 +74,13 @@ SELECT
 FROM albums
 JOIN songs ON albums.id = songs.albumId
 GROUP BY songs.albumId;
+
+
+/* 12 */
+SELECT 
+	bands.name AS 'Bands',
+    COUNT(songs.id) AS 'Number of Songs'
+FROM bands
+JOIN albums ON bands.id = albums.bandId
+JOIN songs ON albums.id = songs.albumId
+GROUP BY albums.bandId;
